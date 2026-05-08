@@ -1,12 +1,19 @@
-# React + Vite
+# Librería Online - Relatos de Papel
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Librería Online "Relatos de Papel" es una aplicación frontend creada como parte de la actividad de la materia Desarrollo Web Full Stack. Permite explorar libros, ver detalles, agregar al carrito y simular el proceso de compra.
 
-Currently, two official plugins are available:
+Equipo: Equipo 8 — Héctor Morales, William Alban, Cristian Cancan, Anggie Moyota y Elvis Mireles.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Tecnologías utilizadas
+- React
+- Vite
+- React Router DOM
+- Context API para estado global
+- Hooks personalizados
+- CSS para estilos
 
-## Expanding the ESLint configuration
+Instalación y ejecución
+1. npm install
+2. npm run dev
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Esta implementación corresponde al desarrollo de la actividad práctica de la asignatura y está pensada como proyecto demostrativo.

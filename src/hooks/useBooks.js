@@ -4,7 +4,6 @@ import { mockBooks } from "../utils/mockBooks.js";
 export function useBooks() {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
 
   useEffect(() => {
     let isActive = true;
@@ -12,7 +11,6 @@ export function useBooks() {
 
     const fetchBooks = async () => {
       setLoading(true);
-      setError("");
 
       try {
         const response = await fetch("http://localhost:8080/api/v1/books");
@@ -33,7 +31,6 @@ export function useBooks() {
         fallbackTimer = setTimeout(() => {
           if (!isActive) return;
           setBooks(mockBooks);
-          setError("Datos cargados desde cache local");
           setLoading(false);
         }, 600);
       }
@@ -47,5 +44,5 @@ export function useBooks() {
     };
   }, []);
 
-  return { books, loading, error };
+  return { books, loading};
 }

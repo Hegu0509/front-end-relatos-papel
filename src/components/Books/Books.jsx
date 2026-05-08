@@ -8,7 +8,7 @@ export default function Books() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const { searchTerm } = useContext(GlobalContext);
-  const { books, loading, error: fetchError } = useBooks();
+  const { books, loading} = useBooks();
 
   const filteredBooks = useMemo(() => {
     const term = searchTerm.trim().toLowerCase();
@@ -47,6 +47,7 @@ export default function Books() {
         </div>
 
         {loading && <p className="loading-message">Cargando libros...</p>}
+
 
         {!loading && filteredBooks.length === 0 && (
           <div className="empty-results">

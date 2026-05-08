@@ -8,11 +8,10 @@ const Search = () => {
     cart,
     darkMode,
     setShowCart,
-    setShowLoginMessage,
     searchTerm,
     setSearchTerm,
   } = useContext(GlobalContext);
-  const { user } = useContext(AuthContext);
+  // const { user } = useContext(AuthContext);
 
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
@@ -21,10 +20,10 @@ const Search = () => {
   };
 
   const handleCartClick = () => {
-    if (!user) {
+/*    if (!user) {
       setShowLoginMessage(true);
       return;
-    }
+    }*/
     setShowCart(true);
   };
 
