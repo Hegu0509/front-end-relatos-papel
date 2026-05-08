@@ -77,7 +77,7 @@ export default function BookDetail() {
             <p className="book-description">{book.shortDescription}</p>
             <p className="book-full-description">{book.description}</p>
 
-              <div className="product-specifications">
+              <div className="book-specifications">
                   <h3>Autor/es</h3>
                   <div className="specs-grid">
                       {book.authors.map((aut, index) => (
@@ -89,7 +89,7 @@ export default function BookDetail() {
                   </div>
               </div>
 
-              <div className="product-specifications">
+              <div className="book-specifications">
                   <h3>Categorias</h3>
                   <div className="specs-grid">
                       {book.categories.map((cat, index) => (
@@ -100,7 +100,7 @@ export default function BookDetail() {
                   </div>
               </div>
 
-              <div className="product-specifications">
+              <div className="book-specifications">
                   <h3>Editorial</h3>
                   <div className="specs-grid">
                           <div className="spec-item">
