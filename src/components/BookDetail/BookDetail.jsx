@@ -37,8 +37,6 @@ export default function BookDetail() {
         <Link to="/books" className="back-link">← Volver a Libros</Link>
       </div>
 
-      {/*{error && <p className="fetch-error">{error}</p>}*/}
-
       {book && (
         <div className="book-detail-content">
           <div className="book-images">

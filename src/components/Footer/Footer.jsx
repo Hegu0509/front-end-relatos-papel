@@ -6,7 +6,7 @@ export default function Footer() {
   const { darkMode } = useContext(GlobalContext);
   return (
     <footer className={`footer${darkMode ? " dark" : ""}`}>
-      <p>© 2026 Relatos de Papel. Todos los derechos reservados.</p>
+      <p>© 2026 Relatos de Papel - Equipo 8. Todos los derechos reservados.</p>
     </footer>
   );
 }
