@@ -1,23 +1,27 @@
-/* Estilos para el footer */
 .footer {
-  background: #111216;
-  color: #e0e0e0;
-  text-align: center;
   position: fixed;
-  left: 220px;
+  right: 0;
   bottom: 0;
-  width: calc(100% - 220px);
-  font-size: 1rem;
-  z-index: 99;
-  transition: left 0.3s, width 0.3s, background 0.3s, color 0.3s;
+  left: 240px;
+  z-index: 80;
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  background: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  backdrop-filter: blur(14px);
 }
-.footer.dark {
-  background: #111216;
-  color: #fff;
+
+.footer p {
+  margin: 0;
+  text-align: center;
 }
-@media (max-width: 800px) {
+
+@media (max-width: 900px) {
   .footer {
     left: 0;
-    width: 100%;
   }
 }

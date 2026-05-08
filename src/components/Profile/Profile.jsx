@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./Profile.css";
 import { AuthContext } from "../../context/auth/AuthContext";
-import {useLogin} from "../../hooks/useLogin.js";
+import { useLogin } from "../../hooks/useLogin.js";
 
 export default function Profile() {
   const { user } = useContext(AuthContext);
@@ -13,34 +13,42 @@ export default function Profile() {
 
   const getStatusColor = (status) => {
     switch (status) {
-      case "entregado": return "status-delivered";
-      case "en_proceso": return "status-processing";
-      case "pendiente": return "status-pending";
-      default: return "status-default";
+      case "entregado":
+        return "status-delivered";
+      case "en_proceso":
+        return "status-processing";
+      case "pendiente":
+        return "status-pending";
+      default:
+        return "status-default";
     }
   };
 
   const getStatusText = (status) => {
     switch (status) {
-      case "entregado": return "Entregado";
-      case "en_proceso": return "En proceso";
-      case "pendiente": return "Pendiente";
-      default: return status;
+      case "entregado":
+        return "Entregado";
+      case "en_proceso":
+        return "En proceso";
+      case "pendiente":
+        return "Pendiente";
+      default:
+        return status;
     }
   };
 
   const formatDate = (dateString) => {
-    return new Date(dateString).toLocaleDateString('es-ES', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
+    return new Date(dateString).toLocaleDateString("es-ES", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     });
   };
 
   const formatPrice = (price) => {
-    return new Intl.NumberFormat('es-ES', {
-      style: 'currency',
-      currency: 'USD'
+    return new Intl.NumberFormat("es-ES", {
+      style: "currency",
+      currency: "USD",
     }).format(price);
   };
 
@@ -48,7 +56,7 @@ export default function Profile() {
     <div className="profile">
       <div className="profile-header">
         <div className="profile-title">
-          <h1>Perfil Empresarial</h1>
+          <h1>Perfil de usuario</h1>
           <button className="logout-btn" onClick={logout}>
             Cerrar sesión
           </button>
@@ -57,7 +65,7 @@ export default function Profile() {
 
       {/* Información de la empresa */}
       <section className="company-info">
-        <h2>Información de la Empresa</h2>
+        <h2>Información de usuario</h2>
         <div className="company-card">
           <div className="company-details">
             <div className="company-name">
@@ -90,14 +98,16 @@ export default function Profile() {
           </div>
         ) : (
           <div className="orders-grid">
-            {user.recentOrders.map(order => (
+            {user.recentOrders.map((order) => (
               <div key={order.id} className="order-card">
                 <div className="order-header">
                   <div className="order-info">
                     <h3 className="order-id">#{order.id}</h3>
                     <span className="order-date">{formatDate(order.date)}</span>
                   </div>
-                  <span className={`order-status ${getStatusColor(order.status)}`}>
+                  <span
+                    className={`order-status ${getStatusColor(order.status)}`}
+                  >
                     {getStatusText(order.status)}
                   </span>
                 </div>
@@ -109,7 +119,9 @@ export default function Profile() {
                       <div key={index} className="item-row">
                         <span className="item-name">{item.name}</span>
                         <span className="item-quantity">x{item.quantity}</span>
-                        <span className="item-price">{formatPrice(item.price)}</span>
+                        <span className="item-price">
+                          {formatPrice(item.price)}
+                        </span>
                       </div>
                     ))}
                   </div>

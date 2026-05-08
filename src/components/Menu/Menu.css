@@ -1,92 +1,74 @@
-/* Estilos para el menú lateral fijo */
 .menu {
   position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 220px;
-  background: #111216;
-  color: #fff;
+  inset: 0 auto 0 0;
+  width: 240px;
   z-index: 100;
-  box-shadow: 2px 0 8px rgba(0,0,0,0.08);
-  display: flex;
-  flex-direction: column;
+  background: #111827;
+  color: #fff;
+  box-shadow: 12px 0 32px rgba(17, 24, 39, 0.18);
+}
+
+.menu::before {
+  content: "Relatos de Papel";
+  display: block;
+  padding: 28px 24px 20px;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 800;
 }
 
 .menu-list {
   list-style: none;
-  padding: 60px 0 0 0;
   margin: 0;
-}
-.menu-list li {
-  margin: 24px 0;
-  padding-left: 32px;
-}
-.menu-list a {
-  color: #e0e0e0;
-  text-decoration: none;
-  font-size: 1.1rem;
-  transition: color 0.2s;
-}
-.menu-list a:hover {
-  color: #389cd1;
+  padding: 10px 14px;
 }
 
-.menu-switch {
+.menu-list li {
+  margin: 6px 0;
+}
+
+.menu-list a {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 18px;
-  padding-left: 32px;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+  font-weight: 700;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 38px;
-  height: 22px;
+
+.menu-list a:hover {
+  background: rgba(15, 118, 110, 0.22);
+  color: #fff;
+  transform: translateX(3px);
 }
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: #ccc;
-  border-radius: 22px;
-  transition: .3s;
-}
-.switch input:checked + .slider {
-  background-color: #232946;
-}
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 16px;
-  width: 16px;
-  left: 3px;
-  bottom: 3px;
-  background-color: #fff;
-  border-radius: 50%;
-  transition: .3s;
-}
-.switch input:checked + .slider:before {
-  transform: translateX(16px);
-  background: #389cd1;
-}
-.switch-label {
-  font-size: 1rem;
-  color: #e0e0e0;
-}
-.menu.dark {
-  background: #111216;
-}
-.menu.dark .menu-list a,
-.menu.dark .switch-label {
-  color: #e0e0e0;
-}
-.menu.dark .menu-list a:hover {
-  color: #389cd1;
+
+@media (max-width: 900px) {
+  .menu {
+    inset: 0 0 auto 0;
+    width: 100%;
+    min-height: 70px;
+    box-shadow: 0 10px 28px rgba(17, 24, 39, 0.18);
+  }
+
+  .menu::before {
+    padding: 14px 16px 4px;
+    font-size: 1rem;
+  }
+
+  .menu-list {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding: 4px 12px 12px;
+  }
+
+  .menu-list a {
+    white-space: nowrap;
+    min-height: 36px;
+    padding: 0 12px;
+    font-size: 0.9rem;
+  }
 }

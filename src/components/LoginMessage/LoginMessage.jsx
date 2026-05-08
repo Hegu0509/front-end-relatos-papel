@@ -4,7 +4,7 @@ import { GlobalContext } from '../../context/global/GlobalContext';
 import './LoginMessage.css';
 
 const LoginMessage = () => {
-  const { showLoginMessage, setShowLoginMessage, darkMode } = useContext(GlobalContext);
+  const { showLoginMessage, setShowLoginMessage } = useContext(GlobalContext);
   const navigate = useNavigate();
 
   if (!showLoginMessage) return null;
