@@ -4,12 +4,13 @@ import { GlobalContext } from '../../context/global/GlobalContext';
 import './LoginMessage.css';
 
 const LoginMessage = () => {
-  const { showLoginMessage, setShowLoginMessage, setShowConfirm } = useContext(GlobalContext);
+  const { showLoginMessage, setShowLoginMessage, setShowConfirm, setShowCart } = useContext(GlobalContext);
   const navigate = useNavigate();
 
   if (!showLoginMessage) return null;
 
   const handleLogin = () => {
+    setShowCart(false);
     setShowLoginMessage(false);
     setShowConfirm(false);
     navigate('/login');
@@ -17,6 +18,7 @@ const LoginMessage = () => {
 
   const handleClose = () => {
     setShowLoginMessage(false);
+    setShowCart(true);
   };
 
   return (

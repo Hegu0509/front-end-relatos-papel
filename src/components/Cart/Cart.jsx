@@ -24,8 +24,8 @@ const Cart = () => {
 
     const goToCheckout = () => {
         if (!user) {
+            setShowCart(true);
             setShowLoginMessage(true);
-            setShowCart(false);
             setShowConfirm(false);
         } else {
             setShowConfirm(false);
