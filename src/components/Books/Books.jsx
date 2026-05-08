@@ -47,7 +47,6 @@ export default function Books() {
         </div>
 
         {loading && <p className="loading-message">Cargando libros...</p>}
-        {fetchError && <p className="fetch-error">{fetchError}</p>}
 
         {!loading && filteredBooks.length === 0 && (
           <div className="empty-results">
