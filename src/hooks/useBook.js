@@ -38,7 +38,7 @@ export function useBook(bookId) {
 
         fallbackTimer = setTimeout(() => {
           if (!isActive) return;
-          const bookData = mockBookDetails[bookId];
+          const bookData = mockBookDetails[bookId-1];
           if (bookData) {
             setBook(bookData);
             setError("Datos cargados desde cache local");
