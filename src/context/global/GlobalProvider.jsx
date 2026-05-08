@@ -7,6 +7,8 @@ export function GlobalProvider({ children }) {
   const [showSuccess, setShowSuccess] = useState(false);
   const [showLoginMessage, setShowLoginMessage] = useState(false);
   const [showAdded, setShowAdded] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [darkMode] = useState(false);
 
   const addToCart = (item) => {
     setCart((prevCart) => {
@@ -47,6 +49,9 @@ export function GlobalProvider({ children }) {
         addToCart,
         removeFromCart,
         updateQuantity,
+        searchTerm,
+        setSearchTerm,
+        darkMode,
         showSuccess,
         setShowSuccess,
         showAdded,

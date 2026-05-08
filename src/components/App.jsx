@@ -12,6 +12,7 @@ import Contact from "./Contact/Contact.jsx";
 import BookDetail from "./BookDetail/BookDetail.jsx";
 import Login from "./Login/Login.jsx";
 import Profile from "./Profile/Profile.jsx";
+import Checkout from "./Checkout/Checkout.jsx";
 import PrivateRoute from "./PrivateRoute/PrivateRoute.jsx";
 import {AuthProvider} from "../context/auth/AuthProvider.jsx";
 import SuccessPopup from "./SuccessPopup/SuccessPopup.jsx";
@@ -37,6 +38,11 @@ export default function App() {
                                 <Route path="books" element={<Books/>}/>
                                 <Route path="books/:bookId" element={<BookDetail/>}/>
                                 <Route path="contact" element={<Contact/>}/>
+                                <Route path="checkout" element={
+                                    <PrivateRoute>
+                                        <Checkout/>
+                                    </PrivateRoute>
+                                }/>
                                 <Route path="profile" element={
                                     <PrivateRoute>
                                         <Profile/>

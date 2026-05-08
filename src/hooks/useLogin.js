@@ -13,35 +13,31 @@ export function useLogin() {
     setIsLoading(true);
     setError("");
 
-    // Validación básica
     if (!username.trim() || !password.trim()) {
-      setError("Usuario y contraseña son obligatorios");
+      setError("Usuario y contrasena son obligatorios");
       setIsLoading(false);
       return { success: false };
     }
 
     try {
-      // Simular petición HTTP
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 700));
 
-      // Buscar usuario en datos mock
       const user = mockUsers.find(
-        c => c.username === username && c.password === password
+        (candidate) => candidate.username === username && candidate.password === password
       );
 
       if (user) {
-        // Login exitoso
         setUser(user);
-        console.log("Login exitoso para:", user.user.name);
         setIsLoading(false);
         return { success: true };
-      } else {
-        setError("Credenciales incorrectas");
-        setIsLoading(false);
-        return { success: false };
       }
+
+      setError("Credenciales incorrectas");
+      setIsLoading(false);
+      return { success: false };
     } catch (err) {
-      setError("Error en el servidor. Inténtalo de nuevo.");
+      console.log("Error de login:", err.message);
+      setError("Error en el servidor. Intentalo de nuevo.");
       setIsLoading(false);
       return { success: false };
     }
@@ -51,7 +47,7 @@ export function useLogin() {
     setTimeout(() => {
       setUser(null);
       navigate("/");
-    }, 1000)
+    }, 400);
   };
 
   return {
@@ -59,6 +55,6 @@ export function useLogin() {
     logout,
     isLoading,
     error,
-    clearError: () => setError("")
+    clearError: () => setError(""),
   };
 }
